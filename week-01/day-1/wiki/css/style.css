@@ -1,0 +1,94 @@
+html {
+  background: url(../picture/topography.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+body{
+  margin: 0;
+}
+.nav{
+
+  text-align: right;
+  padding-top: 20px;
+  padding-right: 10%;
+  padding-left: 10%;
+  background-color: #333333;
+  height: 60px;
+}
+.nav ul {
+  display: block;
+  list-style-type: none;
+}
+
+.nav li{
+
+  display: inline-block;
+  font-size: 18px;
+  padding-top: 20px;
+  padding-right: 30px;
+
+
+
+}
+.nav img{
+  width: 50px;
+  float:left
+
+}
+.nav a{
+
+  color: #ff0099;
+}
+
+.content{
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-bottom: 50px;
+}
+.content h1{
+  font-family: 'Vollkorn SC', sans-serif;
+  margin-top: 100px;
+}
+.content h3{
+  color: #ff0099;
+  margin-top: 30px;
+}
+
+.content p{
+
+  font-family: consolas, courier;
+  line-height: 30px;
+}
+hr{
+  align-content: center;
+  width: 500px;
+}
+
+#wiki{
+  margin-left: 10%;
+  margin-right: 10%;
+
+}
+#wiki h1{
+  text-align: center;
+}
+#wiki dt{
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+#wiki dd{
+  font-family: consolas, courier;
+  line-height: 30px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.break{
+  text-align: center;
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.5);
+}
