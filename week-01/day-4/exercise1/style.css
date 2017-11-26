@@ -1,0 +1,14 @@
+div{
+  margin-top: 20px;
+  margin-left: 30px;
+  font-size: 36px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: rgb( 88, 213, 145);
+  width: 400px;
+  height: 120px;
+  padding-left: 15px;
+  padding-top: 10px;
+  background-color: rgb(0, 148, 165);
+  color: rgb(0, 86, 165);
+}

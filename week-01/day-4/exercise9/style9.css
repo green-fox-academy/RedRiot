@@ -1,0 +1,21 @@
+.wrap{
+  width: 300px;
+  height: 600px;
+
+}
+.block{
+  font-size: 18px;
+  padding: 15px;
+  border: 1px solid black;
+}
+.a{
+  border-top: none;
+}
+.c{
+  border-bottom: none;
+}
+
+/*Hovering effect*/
+.block:hover{
+  background-color: orange;
+}

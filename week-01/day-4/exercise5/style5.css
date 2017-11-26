@@ -1,0 +1,21 @@
+body{
+  margin-left: 50px;
+}
+h1{
+  color: rgb(220, 105, 75);
+}
+h3{
+  color: rgb(130, 74, 218);
+}
+p{
+  width: 500px;
+}
+ol{
+  list-style-type:  upper-roman;
+}
+ol li:nth-of-type(n){
+  text-decoration: underline;
+}
+ol li:nth-of-type(-n+3){
+  color: rgb(210,100,240);
+}

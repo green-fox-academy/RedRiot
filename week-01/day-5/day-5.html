@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+      <title>Form</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+  <body>
+    <div class="wrapper">
+<!--top box-->
+      <div class="header">
+        <p>Profile</p>
+      </div>
+
+
+<!--main container-->
+
+      <div class="flex-container">
+
+        <div class="box one">
+          <h3> Personal Information</h3>
+            <p>Name</p>
+            <input class="name" type="text" required>
+
+<!--second box left-->
+
+          <div class="z">
+            <div class="l t">
+              <p>Birthday</p>
+                <input type="date">
+            </div>
+
+            <div class="l r">
+              <p>Gender</p>
+
+              <div class="nemed">
+
+                    <input type="radio" id="female" name="gender">
+                    <label for="female">female</label>
+                    <input type="radio" id="male" name="gender">
+                    <label for="male">male</label>
+              </div>
+            </div>
+            </div>
+
+  <!--bottom left-->
+
+            <div class="big">
+              <div class="row">
+              <p>What brands do you like?</p>
+                  <input type="checkbox" id="Adidas"/>
+                  <label for="Adidas">Adidas</label><br/>
+                  <input type="checkbox" id="apple" />
+                  <label for="apple">Apple</label><br/>
+                  <input type="checkbox" id="cola">
+                  <label for="cola">Coca-Cola</label><br/>
+                  <input type="checkbox" id="Mazda">
+                  <label for="Mazda">Mazda</label><br/>
+                  <input type="checkbox" id="nike">
+                  <label for="nike">Nike</label><br/>
+              </div>
+
+<!--secondr row-->
+              <div class="column">
+                  <input type="checkbox" id="opel">
+                  <label for="opel">Opel</label><br/>
+                  <input type="checkbox" id="ray" />
+                  <label for="ray">Ray-ban</label><br/>
+                  <input type="checkbox" id="star" />
+                  <label for="star">Starbucks</label><br/>
+                  <input type="checkbox" id="tesla" >
+                  <label for="tesla">Tesla</label><br/>
+                  <input type="checkbox" id="yahoo">
+                  <label for="yahoo">Yahoo</label>
+              </div>
+            </div>
+          </div>
+
+<!--left main box-->
+        <div class="box two">
+
+          <h3>Contact</h3>
+              <p>Telephone<p>
+                <input  class="name" type="tel" placeholder="+36 -- --- ---" required>
+              <p>E-mail address</p>
+                <input  class="name" type="email" placeholder="Email" required>
+              <p>Facebook profile</p>
+                <input  class="name" type="url" placeholder="Facebook" required>
+              <p>Twitter profile</p>
+                <input  class="name" type="url" placeholder="Twitter" required>
+              <p>What kind of building do you live in?</p>
+                <select class="name">
+                  <option>Choose a type</option>
+                  <option>Apartment</option>
+                  <option>Flat</option>
+                </select>
+        </div>
+      </div>
+<!--comment box-->
+      <div class="article">
+        <p>Introduction</p>
+        <textarea cols="113" rows="10" id="textbox" type="text" name="textbox">
+        </textarea>
+      </div>
+
+      <h5>Upload cv</h5>
+
+      <div class="button">
+        <button type="button">Choose File</button>
+      </div>
+      <div class="las">
+        <div class="row">
+          <input  type="checkbox" id="term" required>
+          <label for="term"> I agree with <u>the term and condition.</u></label>
+        </div>
+      </div>
+<!--buttons_-->
+      <div class="submit">
+        <div class="save">
+          <button class="purple" type="submit">Save</button>
+        </div>
+        <div class="delete">
+          <button type="reset">Delete form</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

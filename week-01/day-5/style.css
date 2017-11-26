@@ -1,0 +1,116 @@
+*{
+    font-family: verdana;
+    margin: 0;
+}
+
+body{
+    background: #eee;
+}
+
+/*main boxes*/
+.wrapper{
+    width: 900px;
+    height:830px;
+    margin: 0 auto;
+    background-color: rgb(220,210,206);
+    border-radius: 5px;
+
+}
+
+.header{
+  height:50px;
+  font-size: 40px;
+  padding-top: 30px;
+}
+
+.flex-container, .button, .header, .radio, h5, .las, .submit{
+  margin-left: 100px;
+  display: flex;
+  margin-top: 10px;
+}
+
+
+.box{
+  height: 320px;
+  min-width: 100px;
+
+}
+
+.one, .two, .row, .column, .radio, .save, .delete, .radio{
+  flex-grow: 1;
+}
+
+.article{
+  height:200px;
+  justify-content: flex-start;
+  margin-left: 100px;
+}
+
+/* 2. small boxes */
+.z{
+  margin-top:10px;
+  margin-right: 10px;
+  display: flex;
+}
+
+.l, .t, .big{
+  height: 60px;
+  min-width:15px;
+  flex-grow: 1
+}
+
+.big{
+  height: 150px;
+  margin-top: 20px;
+  display: flex;
+
+}
+/* input part*/
+.tick{
+  width :330px;
+}
+.submit{
+  margin-top: 30px;
+}
+.name{
+  width:330px;
+  height:30px;
+  line-height: 10px;
+  border-radius: 5px;
+}
+
+h3{
+  font-size: 20px;
+  font-weight: bold;
+  width: 330px;
+  height: 30px;
+  background-color: grey;
+}
+
+.article input{
+  height: 150px;
+  width: 730px;
+  margin-top: 10px;
+}
+
+.column{
+  margin-top: 20px;
+}
+button{
+  width: 150px;
+  height: 40px;
+  border-radius: 5%;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight:  bold;
+}
+
+.delete{
+  padding-left: 370px;
+}
+.purple{
+  background-color: rgb(60, 55, 70);
+}
+input[type=email]{
+    width: 80px;
+  }
