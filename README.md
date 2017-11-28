@@ -1,4 +1,2 @@
-# git-lesson-repository
-An example repository for the command line workshop in tools and basics module.
-
-For the problems see the workshop: https://github.com/greenfox-academy/teaching-materials/edit/master/workshop/command-line
+My first day exercise
+https://redriot.github.io/yourgithubusername.github.io/
