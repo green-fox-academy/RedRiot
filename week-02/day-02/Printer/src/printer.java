@@ -1,27 +1,37 @@
 import java.util.Scanner;
 
 public class printer {
-  public static void main(String[] args) {
 
-    Scanner s=new Scanner(System.in);
+    public static void main(String[] args) {
+      //  Create the usual class wrapper
+      //  and main method on your own.
 
-    System.out.println("enter number of elements");
+      // - Create a function called `printer`
+      //   which prints the input String parameters
+      // - It can have any number of parameters
 
-    int n=s.nextInt();
-
-    int arr[]=new int[n];
-
-    System.out.println("enter elements");
-
-    for(int i=0;i<n;i++){//for reading array
-      arr[i]=s.nextInt();
-
+      // Examples
+      // printer("first")
+      // printer("first", "second")
+      // printer("first", "second", "third", "fourh")
+      // ...
+      Scanner scanner = new Scanner(System.in);
+      System.out.println("How many entries? ");
+      int limit = scanner.nextInt();
+      String[] words = new String[limit];
+      for (int i = 0; i < limit; i++) {
+        System.out.println("Please enter the word: ");
+        String userInput = scanner.next();
+        words[i] = userInput;
+      }
+      System.out.println("The sum is: " + printer(words));
     }
-
-    for(int i: arr) { //for printing array
-
-      System.out.println(i);
-
+    public static String printer(String[] input){
+      String total = "";
+      for (int i = 0; i < input.length; i++) {
+        total = total + "\" " + input[i] + " \" ";
+      }
+      return total;
     }
-    }
-}
+  }
+
