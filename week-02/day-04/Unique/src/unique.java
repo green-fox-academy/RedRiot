@@ -11,6 +11,7 @@ public class unique {
     System.out.println("Write numbers");
     Scanner scanner = new Scanner(System.in);
     ArrayList<Integer> list = new ArrayList<>();
+
     while(scanner.hasNextInt()){
       list.add(scanner.nextInt());
     }

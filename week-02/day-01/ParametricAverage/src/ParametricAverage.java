@@ -10,7 +10,11 @@ public class ParametricAverage {
 //
 // Sum: 22, Average: 4.4
     System.out.println("Give me the amount of  numbers");
-    Scanner scanner = new Scanner(System.in);
+
+
+
+
+    Scanner scanner = new Scanner(System.in);777
 
     int  numbers = scanner.nextInt();
     int arr[] = new int[numbers];

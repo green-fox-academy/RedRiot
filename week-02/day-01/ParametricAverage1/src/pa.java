@@ -12,9 +12,11 @@ public class pa {
     System.out.println("Give the numbers and If you are finished write 'Done'!");
 
     ArrayList<Integer> list = new <Integer> ArrayList();
+
     while(scanner.hasNextInt()){
       list.add(scanner.nextInt());
     }
+
     int sum = 0;
     for( int i = 1; i < list.size(); i++){
       sum += list.get(i);}
