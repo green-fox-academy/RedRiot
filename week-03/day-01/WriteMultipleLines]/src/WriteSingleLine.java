@@ -25,7 +25,6 @@ public class WriteSingleLine {
         content.add(word);
         Files.write(filePath, content);
 
-
       }
     } catch (IOException e) {
 

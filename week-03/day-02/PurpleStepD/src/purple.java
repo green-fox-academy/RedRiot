@@ -12,7 +12,7 @@ public class purple {
     int start = 1;
     int size = 10;
     int sum=0;
-    for (int i = 0; i <6 ; i++) {
+    for (int i = 0; i <7 ; i++) {
       graphics.setColor(Color.magenta);
       graphics.fillRect(sum*size, sum*size, size*i, size*i);
       sum= sum+i;

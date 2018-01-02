@@ -12,17 +12,20 @@ public class chess {
     int col;
     int x,y;
 
-    for ( row = 0;  row < 16;  row++ ) {
+    for ( row = 0;  row < 16;  row
 
       for ( col = 0;  col < 16;  col++) {
         x = col * 20;
         y = row * 20;
-        if ( (row % 2) == (col % 2) )
-          graphics.setColor(Color.white);
-        else
+        if ((row % 2) == (col % 2)) {
+
           graphics.setColor(Color.black);
-        graphics.fillRect(x, y, 20, 20);
-      }
+          graphics.drawRect(x, y, 20, 20);
+        } else {
+          graphics.setColor(Color.black);
+          graphics.drawRect(x, y, 20, 20);
+        }
+        }
 
     }
 
