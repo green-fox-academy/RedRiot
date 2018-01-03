@@ -11,7 +11,7 @@ public class Exercise2  {
             .filter(number -> Math.abs(number) % 2 == 1)
             .mapToDouble(av -> av)
             .average();
-    System.out.println(averageOfOddNumbers);
+    System.out.println(averageOfOddNumbers.getAsDouble());
 
   }
 
