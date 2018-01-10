@@ -6,6 +6,14 @@ public class BankAccount {
   private String animalType;
   private String currency;
 
+  public BankAccount(String name, float balance, String animalType) {
+    this.name = name;
+    this.balance = balance;
+    this.animalType = animalType;
+    this.currency = "Zebra";
+  }
+
+
   public String getName() {
     return name;
   }
@@ -22,17 +30,6 @@ public class BankAccount {
     return currency;
   }
 
-  public BankAccount(String name, float balance, String animalType) {
-    this.name = name;
-    this.balance = balance;
-    this.animalType = animalType;
-    this.currency = "Zebra";
-  }
 
-  @Override
-  public String toString() {
 
-    return getName() + " " + getBalance() + "0" + " " + getCurrency() + " " + getAnimalType();
-  }
-  
 }
