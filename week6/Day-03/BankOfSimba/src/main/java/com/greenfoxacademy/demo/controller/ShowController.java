@@ -10,7 +10,7 @@ import java.util.List;
 
 @Controller
 public class ShowController {
-  BankAccount simbaAccount = new BankAccount("Simba",2000,"lion");
+  BankAccount simbaAccount = new BankAccount(false,"Simba",2000,"lion");
 
   @RequestMapping("/show")
   public String show(Model model) {
@@ -35,10 +35,10 @@ public class ShowController {
   @RequestMapping("/accounts")
   public String Accounts(Model model) {
     List<BankAccount> accountList = new ArrayList<>();
-    accountList.add(new BankAccount("Nara", 3000, "lion"));
-    accountList.add(new BankAccount("scar", 2500, "lion"));
-    accountList.add(new BankAccount("rafiki", 1800, "monkey"));
-    accountList.add(new BankAccount("timon", 500, "suricata"));
+    accountList.add(new BankAccount(true,"Nara", 3000, "lion"));
+    accountList.add(new BankAccount(false,"scar", 2500, "lion"));
+    accountList.add(new BankAccount(true,"rafiki", 1800, "monkey",true));
+    accountList.add(new BankAccount(false,"timon", 500, "suricata"));
 
     model.addAttribute("list", accountList);
 

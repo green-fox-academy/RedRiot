@@ -8,14 +8,31 @@
 <body>
 <table>
     <tr>
+        <th>Index</th>
         <th>Name</th>
         <th>Balance</th>
         <th>Animal</th>
+        <th>King</th>
+        <th>State</th>
+        <th></th>
+
     </tr>
     <tr th:each= "account : ${list} ">
+        <td th:text="${accountStat.index}" />
         <td th:text="${account.getName()}"/>
         <td th:text="${account.getBalance()}"/>
         <td th:text="${account.getAnimalType()}"/>
+        <td>
+            <span th:if="${account.isKing() == true}" th:text="King"/>
+        </td>
+        <td>
+            <span th:if="${account.isAGuy()==false}" th:text="'Bad guy'" />
+            <span th:unless="${account.isAGuy()==false}" th:text="'Good guy'"/>
+        </td>
+        <td>
+            <button> raise </button>
+        </td>
+
 
 
     </tr>
