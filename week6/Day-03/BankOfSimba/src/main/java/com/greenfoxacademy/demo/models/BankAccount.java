@@ -30,6 +30,8 @@ public class BankAccount {
     return currency;
   }
 
-
-
+  @Override
+  public String toString() {
+    return getName() + " " + getBalance() + "0" + " " + getCurrency() + " " + getAnimalType();
+  }
 }
