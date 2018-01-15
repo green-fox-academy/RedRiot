@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +20,11 @@ public class TodoControlller {
   @Autowired
   TodoRepository todoRepository;
 
-  @GetMapping(value = {"/", "/list"})
-  public String list(Model model) {
-    List<ToDo> todos = (List<ToDo>) todoRepository.findAll();
+  @GetMapping({"/", "/list"})
+  public String list(Model model){
+    List<ToDo> todos = new ArrayList<>();
+    todoRepository.findAll().forEach(todos::add);
     model.addAttribute("todos", todos);
-    return "list";
+    return "todo";
   }
 }
