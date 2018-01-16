@@ -48,6 +48,7 @@ public class TodoControlller {
 
   @PostMapping(value = "/add/")
   public ModelAndView add(Model model, @ModelAttribute ToDo toDo) {
+    System.out.println(toDo.getTitle());
     todoService.save(toDo);
     return new ModelAndView("redirect:/todo/");
 
