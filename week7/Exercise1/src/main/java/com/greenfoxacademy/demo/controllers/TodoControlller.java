@@ -29,7 +29,7 @@ public class TodoControlller {
     List<ToDo> todosList = new ArrayList<>();
     if (isActive == null) {
       todoRepository.findAll().forEach(todosList::add);
-    } else if (isActive) {
+    } else if (!isActive) {
       todosList = StreamSupport.stream(todoRepository.findAll().spliterator(), false)
               .filter(p -> p.isDone())
               .collect(Collectors.toList());
