@@ -2,13 +2,12 @@ package com.greenfoxacademy.demo.controllers;
 
 import com.greenfoxacademy.demo.models.ToDo;
 import com.greenfoxacademy.demo.repositories.TodoRepository;
+import com.greenfoxacademy.demo.services.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +21,8 @@ public class TodoControlller {
 
   @Autowired
   TodoRepository todoRepository;
+ @Autowired
+ TodoService todoService;
 
   @GetMapping({"/", "/list"})
   public String list(@RequestParam(value = "isActive", required = false) Boolean isActive, Model model) {
@@ -42,4 +43,19 @@ public class TodoControlller {
     return "todo";
 
   }
+
+  @PostMapping(value = "/add/")
+  public ModelAndView add(Model model, @ModelAttribute ToDo toDo) {
+    todoService.save(toDo);
+    return new ModelAndView("redirect:/todo/");
+
+  }
+
+  @GetMapping("/add/")
+  public String create(Model model) {
+    ToDo todo = new ToDo();
+    model.addAttribute("todo", todo);
+    return "add";
+  }
+  
 }
