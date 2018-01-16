@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class ToDo {
@@ -15,13 +16,18 @@ public class ToDo {
   boolean isUrgent;
   boolean isDone;
 
+
+
   public ToDo() {
   }
 
   public ToDo(String title, boolean isUrgent, boolean isDone) {
+
     this.title = title;
     this.isUrgent = isUrgent;
     this.isDone = isDone;
+
+
   }
 
   public int getId() {

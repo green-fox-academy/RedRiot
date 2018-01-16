@@ -18,11 +18,11 @@ public class DemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		todoRepository.save(new ToDo("I have to learn Object Relational Mapping",true, true));
-		todoRepository.save(new ToDo("I have to learn Object Relational Mapping",true,false));
-		todoRepository.save(new ToDo("I have to learn Object Relational Mapping",false,false));
-		todoRepository.save(new ToDo("I have to learn Object Relational Mapping",false,false));
-		todoRepository.save(new ToDo("I have to learn Object Relational Mapping",false,false));
+		todoRepository.save(new ToDo("Do the laundry",true, true));
+		todoRepository.save(new ToDo("Prepare food",true,false));
+		todoRepository.save(new ToDo("Make the bed",false,false));
+		todoRepository.save(new ToDo("Go to school",false,false));
+		todoRepository.save(new ToDo("Do the homework",false,false));
 
 
 
