@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,8 +23,8 @@ public class TodoControlller {
 
   @Autowired
   TodoRepository todoRepository;
- @Autowired
- TodoService todoService;
+  @Autowired
+  TodoService todoService;
 
   @GetMapping({"/", "/list"})
   public String list(@RequestParam(value = "isActive", required = false) Boolean isActive, Model model) {
@@ -57,5 +59,25 @@ public class TodoControlller {
     model.addAttribute("todo", todo);
     return "add";
   }
-  
+
+  @PostMapping("/delete/{taskId}")
+  public String deleteApplicant(@PathVariable int taskId) {
+    todoService.delete(taskId);
+    return "redirect:/todo/";
+
+  }
+
+  @GetMapping("/edit/{taskId}")
+  public String getEditPage(@PathVariable int taskId, Model model){
+    model.addAttribute("todo", todoService.getToDo(taskId));
+    return "edit";
+  }
+
+  @PostMapping("/edit/{taskId}")
+  public String editTodo(@PathVariable int taskId, @ModelAttribute ToDo todo){
+    todo.setId(taskId);
+    todoService.save(todo);
+    return "redirect:/todo/";
+  }
+
 }

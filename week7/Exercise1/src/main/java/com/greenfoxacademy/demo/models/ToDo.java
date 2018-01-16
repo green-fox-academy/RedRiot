@@ -36,7 +36,7 @@ public class ToDo {
     return title;
   }
 
-  public void setTitle(String title) {
+  public void setIsTitle(String title) {
     this.title = title;
   }
 
@@ -44,7 +44,7 @@ public class ToDo {
     return isUrgent;
   }
 
-  public void setUrgent(boolean urgent) {
+  public void setIsUrgent(boolean urgent) {
     isUrgent = urgent;
   }
 

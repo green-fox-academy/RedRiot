@@ -13,13 +13,26 @@
         <th>Task</th>
         <th>Done</th>
         <th>Urgent</th>
+        <th>Delete</th>
     </tr>
     </thead>
     <tr align="center" style="background-color: grey; font-size: large; color: white"
-        th:each="todo : ${todosList}">
-        <td th:text="${todo.title}" />
-        <td th:text="${todo.done}" />
-        <td th:text="${todo.urgent}"/>
+        th:each="todo : ${todosList}" th:object="${todo}">
+        <td th:text="*{title}" />
+        <td th:text="*{done}" />
+        <td th:text="*{urgent}"/>
+
+        <td>
+            <form action="#" th:action="@{delete/} + *{id}" method="post">
+                <input class="btn btn-danger" value="Delete" type="submit"/>
+            </form>
+        </td>
+        <td>
+            <form action="#" th:action="@{edit/} + *{id}" method="get">
+                <input type="submit" value="edit"/>
+            </form>
+        </td>
+
     </tr>
 </table>
 
