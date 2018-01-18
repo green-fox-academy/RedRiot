@@ -81,4 +81,13 @@ public class TodoControlller {
     return "redirect:/todo/";
   }
 
+  @RequestMapping(value = "/search")
+  public String searchTask(@RequestParam(value ="search",required = false) String searchTask,Model model) {
+    List<ToDo> list = todoRepository.findAllByTitleContains(searchTask);
+    model.addAttribute("todosList", list);
+    return "todo";
+  }
+
+
+
 }
