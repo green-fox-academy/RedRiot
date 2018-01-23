@@ -2,6 +2,7 @@ package com.greenfoxacademy.demo.controller;
 
 import com.greenfoxacademy.demo.model.Doubling;
 import com.greenfoxacademy.demo.model.Error;
+import com.greenfoxacademy.demo.model.Greeter;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -16,4 +17,17 @@ public class RestController {
     return new Error("Please provide an input!");
   }
 
+  @GetMapping("/greeter")
+  public Object greeting(@RequestParam(value = "name", required = false)String name ,
+                         @RequestParam(value = "title",required = false)String title ) {
+
+    if (name == null) {
+      return new Error("Please provide a name!");
+    } else if (title == null) {
+      return new Error("Please provide a title!");
+    } else {
+      return new Greeter(name, title);
+    }
+
+  }
 }
