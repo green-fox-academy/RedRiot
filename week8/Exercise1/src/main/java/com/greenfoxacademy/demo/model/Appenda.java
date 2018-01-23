@@ -11,7 +11,10 @@ public class Appenda {
     this.appended = appended;
   }
 
+  public Appenda() {
+  }
+
   public Appenda(String appended) {
-    this.appended = appended+"a";
+    this.appended = appended + "a";
   }
 }
