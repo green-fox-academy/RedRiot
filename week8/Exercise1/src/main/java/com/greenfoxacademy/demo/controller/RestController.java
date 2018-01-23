@@ -1,12 +1,8 @@
 package com.greenfoxacademy.demo.controller;
 
-import com.greenfoxacademy.demo.model.Appenda;
-import com.greenfoxacademy.demo.model.Doubling;
+import com.greenfoxacademy.demo.model.*;
 import com.greenfoxacademy.demo.model.Error;
-import com.greenfoxacademy.demo.model.Greeter;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @org.springframework.web.bind.annotation.RestController
 
@@ -41,4 +37,24 @@ public class RestController {
     }
     return new Appenda(appendable);
   }
+
+  @PostMapping("/dountil/{what}")
+  public Object doUntil(@PathVariable(value = "what") String what, @RequestBody(required = false) DoUntil until) {
+    int number1 = 0;
+    if (until == null) {
+      return new Error("Please provide a number!");
+    } else if (what.equals("sum")) {
+      for (int i = 1; i <= until.getUntil(); i++) {
+        number1 += i;
+      }
+      return new Result(number1);
+    } else {
+      number1 = 1;
+      for (int i = 1; i <= until.getUntil(); i++) {
+        number1 = number1 * i;
+      }
+      return new Result(number1);
+    }
+  }
+
 }
