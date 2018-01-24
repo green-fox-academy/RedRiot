@@ -2,14 +2,15 @@ package com.greenfoxacademy.demo.model;
 
 public class ArrayHandler {
   private String what;
-  private int[] number;
+  private Integer[] numbers;
+
 
   public ArrayHandler() {
   }
 
-  public ArrayHandler(String what, int[] number) {
+  public ArrayHandler(String what, Integer[] numbers) {
     this.what = what;
-    this.number = number;
+    this.numbers = numbers;
   }
 
   public String getWhat() {
@@ -20,12 +21,12 @@ public class ArrayHandler {
     this.what = what;
   }
 
-  public int[] getNumber() {
-    return number;
+  public Integer[] getNumbers() {
+    return numbers;
   }
 
-  public void setNumber(int[] number) {
-    this.number = number;
+  public void setNumbers(Integer[] numbers) {
+    this.numbers = numbers;
   }
 }
 

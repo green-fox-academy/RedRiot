@@ -59,7 +59,7 @@ public class RestController {
 
   @PostMapping("/arrays")
   public Object arrayHandler(@RequestBody(required = false) ArrayHandler arrayHandler) {
-    if (arrayHandler.getNumber().length == 0) {
+    if (arrayHandler.getNumbers().length == 0) {
       return new Error("Please provide some numbers!");
     } else if (arrayHandler.getWhat().equals(null)) {
       return new Error("Please provide what to do with the numbers!");

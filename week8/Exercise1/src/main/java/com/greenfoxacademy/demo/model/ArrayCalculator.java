@@ -12,23 +12,31 @@ public class ArrayCalculator {
   public ArrayCalculator(String operator, ArrayHandler arrayHandler) {
     if (operator.equals("sum")) {
       int sumNumber = 0;
-      for (int i = 0; i <arrayHandler.getNumber().length ; i++) {
-        sumNumber += arrayHandler.getNumber()[i];
+      for (int i = 0; i <arrayHandler.getNumbers().length ; i++) {
+        sumNumber += arrayHandler.getNumbers()[i];
       }
       this.result = Integer.toString(sumNumber);
 
     } else if (operator.equals("multiply")) {
-      int sumNumber = 0;
-      for (int i = 0; i < arrayHandler.getNumber().length; i++) {
-        sumNumber *= arrayHandler.getNumber()[i];
+      int sumNumber = 1;
+      for (int i = 0; i < arrayHandler.getNumbers().length; i++) {
+        sumNumber *= arrayHandler.getNumbers()[i];
       }
       this.result = Integer.toString(sumNumber);
     } else if (operator.equals("double")) {
       List<Integer> doubleTheNumbers = new ArrayList<>();
-      for (int i = 0; i < arrayHandler.getNumber().length; i++) {
-        doubleTheNumbers.add(arrayHandler.getNumber()[i] * 2);
+      for (int i = 0; i < arrayHandler.getNumbers().length; i++) {
+        doubleTheNumbers.add(arrayHandler.getNumbers()[i] * 2);
       }
-      this.result = arrayHandler.toString();
+      this.result = doubleTheNumbers.toString();
     }
+  }
+
+  public String getResult() {
+    return result;
+  }
+
+  public void setResult(String result) {
+    this.result = result;
   }
 }
