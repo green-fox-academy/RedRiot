@@ -19,23 +19,16 @@ public class CarServiceImp implements CarService {
   }
 
   @Override
-  public List<Car> getCarByLicencePlate(String plate) {
-    List<Car> LicencePlatesOfGivenString = new ArrayList<>();
-    carRepository.findAllByPlateContaining(plate).forEach(LicencePlatesOfGivenString::add);
+  public List<Car> getCarByLicencePlate(String plate,int police,int diplomat) {
+    if (police==(1)) {
+      return carRepository.findAllByPlateStartsWith("RB");
+    }
+    else if (diplomat==1) {
+      return carRepository.findAllByPlateStartsWith("DT");
+    }
+      return carRepository.findAllByPlateStartsWith(plate);
 
-    return LicencePlatesOfGivenString;
   }
-
-  @Override
-  public List<Car> diplomatCar() {
-    return carRepository.findAllByPlateStartsWith("DT");
-  }
-
-  @Override
-  public List<Car> policeCars() {
-    return carRepository.findAllByPlateStartsWith("RB");
-  }
-
 
   @Override
   public List<Car> getCarByBrand(String brand) {

@@ -24,37 +24,10 @@ public class CarController {
 
   @GetMapping("/search")
   public String searchCar(@RequestParam(value = "q", required = false, defaultValue = "") String q,
-                          @RequestParam(value = "police", required = false, defaultValue = "0") String police,
-                          @RequestParam(value = "diplomat", required = false, defaultValue = "0") String diplomat, Model model) {
-    if (!q.equals("")) {
-      model.addAttribute("listOfAllCars", carService.getCarByLicencePlate(q));
-    }
-    else if (!police.equals("0")) {
-      model.addAttribute("listOfAllCars", carService.policeCars());
-      return "index";
-    }
-    else if (!diplomat.equals("0")) {
-      model.addAttribute("listOfAllCars", carService.diplomatCar());
-      return "index";
-    } else {
-    model.addAttribute("listOfAllCars", carService.getAllCars());
-    }
+                          @RequestParam(value = "police", required = false, defaultValue = "0") int police,
+                          @RequestParam(value = "diplomat", required = false, defaultValue = "0") int diplomat, Model model) {
+
+    model.addAttribute("listOfAllCars", carService.getCarByLicencePlate(q, police, diplomat));
     return "index";
   }
-
-/*
-  @GetMapping("/search")
-  public String searchPoliceCar(@RequestParam String search, Model model) {
-    model.addAttribute("PoliceCar", carService.getSpecialCar("RB"));
-
-    return "redirect:/";
-  }
-  @GetMapping("/search")
-  public String searchDiplomatCar(@RequestParam String search, Model model) {
-    model.addAttribute("DiplomatCar", carService.getSpecialCar("DT"));
-
-    return "redirect:/";
-  }
-*/
-
 }

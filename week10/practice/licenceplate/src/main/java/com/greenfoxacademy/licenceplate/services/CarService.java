@@ -10,9 +10,7 @@ import java.util.List;
 public interface CarService {
 
   List<Car> getAllCars();
-  List<Car> getCarByLicencePlate(String plate);
-  List<Car> diplomatCar();
-  List<Car> policeCars();
+  List<Car> getCarByLicencePlate(String plate, int police, int diplomat);
   List<Car> getCarByBrand(String brand);
 
 
