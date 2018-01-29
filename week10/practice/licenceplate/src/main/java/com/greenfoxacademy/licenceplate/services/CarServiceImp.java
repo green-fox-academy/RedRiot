@@ -27,7 +27,6 @@ public class CarServiceImp implements CarService {
       return carRepository.findAllByPlateStartsWith("DT");
     }
       return carRepository.findAllByPlateStartsWith(plate);
-
   }
 
   @Override

@@ -24,7 +24,6 @@
         </tr>
         <tr th:each="car : ${listOfAllCars}" th:object="${car}">
             <td th:text="*{plate}"/>
-            <td th:text="*{carBrand}"/>
             <td>
                <a th:href="@{'/search/{brand}'(brand=*{carBrand})}" th:text="*{carBrand}"></a>
             </td>
