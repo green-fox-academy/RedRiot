@@ -28,9 +28,14 @@ public class CarController {
   public String searchCar(@RequestParam(value = "q", required = false, defaultValue = "") String q,
                           @RequestParam(value = "police", required = false, defaultValue = "0") int police,
                           @RequestParam(value = "diplomat", required = false, defaultValue = "0") int diplomat, Model model) {
-
-    model.addAttribute("listOfAllCars", carService.getCarByLicencePlate(q, police, diplomat));
+    if (carService.plateValidator(q) || police == 1 || diplomat == 1) {
+      model.addAttribute("listOfAllCars", carService.getCarByLicencePlate(q, police, diplomat));
+      return "index";
+    }
+    model.addAttribute("error", "Sorry,the submitted licence plate is not valid");
     return "index";
+
+
   }
 
   @RequestMapping("/search/{brand}")

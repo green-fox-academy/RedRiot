@@ -12,6 +12,8 @@
         <input type="search" name="q" placeholder="Search"/>
         <button type="submit" value="Submit">Search</button>
     </form>
+    <P th:if="${error}" th:text="${error}" />
+
     <a class="btn btn-primary" href='/search?police=1'>Police cars only</a>
     <a class="btn btn-primary" href='/search?diplomat=1'>Diplomats only</a>
     <table class="table table-striped">
@@ -25,7 +27,7 @@
         <tr th:each="car : ${listOfAllCars}" th:object="${car}">
             <td th:text="*{plate}"/>
             <td>
-               <a th:href="@{'/search/{brand}'(brand=*{carBrand})}" th:text="*{carBrand}"></a>
+               <a th:href="@{/search/} + *{carBrand}" th:text="*{carBrand}"></a>
             </td>
             <td th:text="*{carModel}"/>
             <td th:text="*{color}"/>
