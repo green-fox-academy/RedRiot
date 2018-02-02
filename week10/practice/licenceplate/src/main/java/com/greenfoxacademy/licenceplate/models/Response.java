@@ -9,6 +9,11 @@ public class Response {
   public Response() {
   }
 
+  public Response(String result, List<Car> data) {
+    this.result = result;
+    this.data = data;
+  }
+
   public String getResult() {
     return result;
   }
