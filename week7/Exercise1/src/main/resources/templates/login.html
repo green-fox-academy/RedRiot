@@ -12,12 +12,12 @@
 </div>
 <div class="container">
     <div class="form-group">
-        <form action="#" th:object="${user}" th:action="@{/login} " method="POST">
+        <form action="#" th:object="${user}" th:action="@{/todo/}" method="GET">
             <label for="username">Username:</label>
-            <input type="text" th:field="*{username}" class="form-control input-sm" id="username"/>
+            <input type="text"  th:field="*{username}"   class="form-control input-sm" id="username"/>
 
-            <label for="password">Username:</label>
-            <input type="password" th:field="*{password}" class="form-control input-sm" id="password"/>
+            <label for="password">Password:</label>
+            <input type="password" th:field="*{password}"  class="form-control input-sm" id="password"/>
 
             <input th:type="submit" value="Login" class="btn btn-default"/>
 

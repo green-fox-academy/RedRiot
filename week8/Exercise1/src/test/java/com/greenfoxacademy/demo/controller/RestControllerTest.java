@@ -43,7 +43,7 @@ public class RestControllerTest {
     mockMvc.perform(
             get("/doubling?input=")
     )
-            .andExpect(status().)
+            .andExpect(status().isOk())
             .andExpect(content().contentType("application/json;charset=UTF-8"))
             .andExpect(jsonPath("$.received", is(15)))
             .andExpect(jsonPath("$.result", is(30)));

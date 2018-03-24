@@ -30,11 +30,6 @@ public class Main {
 
 
       sponsor.hire();
-    }czasdhgkjc
-
-    for(Person person : people) {
-      person.introduce();
-      person.getGoal();
     }
 
     PallidaClass badass = new PallidaClass("BADA55");

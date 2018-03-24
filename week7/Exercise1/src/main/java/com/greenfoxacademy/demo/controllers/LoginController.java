@@ -8,25 +8,25 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class LoginController {
   @Autowired
   UserServiceImp userServiceImp;
 
+
   @GetMapping("/login")
-  public String showLogin(Model model) {
-    User user = new User();
-    model.addAttribute("user", user);
+  public String getLogin(Model  model) {
+    model.addAttribute("user", new User());
     return "login";
   }
 
   @PostMapping("/login")
-  public String loginURL(@ModelAttribute User user) {
-    if (userServiceImp.access(user.getUsername(),user.getPassword())) {
-      return "redirect:/todo/";
-    }
-    return "todo";
+  public String loginURL(Model model, @ModelAttribute User user) {
+    User userloggedin = userServiceImp.findByName(user.getUsername());
+    model.addAttribute("user", userloggedin);
+    return "/todo/";
   }
 }

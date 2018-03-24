@@ -8,23 +8,16 @@ public class BankAccount {
   private boolean isKing;
   private boolean isAGuy;
 
-  public BankAccount(boolean isAGuy,String name, double balance, String animalType) {
-    this.name = name;
-    this.balance = balance;
-    this.animalType = animalType;
-    this.currency = "Zebra";
-    this.isKing = false;
-    this.isAGuy = isAGuy;
+  public BankAccount() {
   }
 
-  public BankAccount(boolean isAGuy,String name, double balance, String animalType, boolean isKing) {
-    this.isAGuy = isAGuy;
+  public BankAccount(boolean isKing, String name, double balance, String animalType, boolean isAGuy) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
     this.currency = "Zebra";
-    this.isKing = true;
-
+    this.isKing = isKing;
+    this.isAGuy = isAGuy;
   }
 
   public String getName() {
@@ -43,12 +36,25 @@ public class BankAccount {
     return currency;
   }
 
+  public void setKing(boolean king) {
+    isKing = king;
+  }
+
+  public void setAGuy(boolean AGuy) {
+    isAGuy = AGuy;
+  }
+
   public boolean isKing() {
+
     return isKing;
   }
 
   public boolean isAGuy() {
     return isAGuy;
+  }
+
+  public void setBalance(double balance) {
+    this.balance = balance;
   }
 
   @Override

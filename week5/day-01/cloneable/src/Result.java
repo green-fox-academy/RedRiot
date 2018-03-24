@@ -20,6 +20,8 @@ public class Result {
     people.add(sponsor);
     Sponsor elon = new Sponsor("Elon Musk", 46, "male", "SpaceX");
     people.add(elon);
+
+
     Student johnTheClone = john.clone();
     System.out.println(johnTheClone.getName());
 

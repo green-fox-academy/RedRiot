@@ -23,7 +23,7 @@ public class Student extends Person  implements Cloneable{
   public void skipDays(int numberOfDays) {
     skippedDays = skippedDays + numberOfDays;
   }
-  @Override
+
   protected Student clone() throws CloneNotSupportedException {
     return (Student) super.clone();
   }

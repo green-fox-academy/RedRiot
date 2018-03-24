@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Todo Application</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Tasks for today</h1>
+</div>
+<div class="container">
+
+    <form action="#" th:action="@{search} " method="get" >
+        <input class="form-control" type="text" name="search" placeholder="Search .."/>
+        <input type="submit" value="Submit" class="btn btn-default"/>
+    </form>
+</div>
+<div class="container">
+    <div class="table-responsive">
+
+        <table style="width:100%" class="table table-hover">
+            <tbody id="myTable">
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+
+
+            </tr>
+
+            <tr th:each="inventory : ${inventoryList}" th:object="${inventory}">
+                <td th:text="*{name}" />
+                <td th:text="*{price}" />
+                <td th:text="*{amount}"/>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<div class="container">
+    <a class="btn btn-primary" href="http://localhost:8080/todo/add/">Add new task</a>
+</div>
+
+
+
+</body>
+</html>

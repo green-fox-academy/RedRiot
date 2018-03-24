@@ -26,6 +26,7 @@ public class TodoControlller {
   @Autowired
   TodoService todoService;
 
+
   @GetMapping({"/", "/list"})
   public String list(@RequestParam(value = "isActive", required = false) Boolean isActive, Model model) {
 

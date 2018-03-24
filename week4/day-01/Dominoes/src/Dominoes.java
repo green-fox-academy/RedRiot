@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Dominoes {
@@ -20,6 +21,8 @@ public class Dominoes {
       }
 
     System.out.println(dominoes);
+    Collections.sort(dominoes);
+    System.out.println(dominoes);
   }
 
   static List<Domino> initializeDominoes() {
@@ -32,7 +35,6 @@ public class Dominoes {
     dominoes.add(new Domino(7, 1));
 
 
-    System.out.println(dominoes.get(4));
 
     return dominoes;
   }

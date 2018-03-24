@@ -46,7 +46,6 @@ public class HelloWebController {
     model.addAttribute("size",n);
     model.addAttribute("color",color[n]);
 
-
     return "greeting";
   }
 }

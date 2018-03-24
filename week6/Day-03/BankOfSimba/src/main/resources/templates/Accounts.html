@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:action="http://www.w3.org/1999/xhtml">
 <head>
     <title>Thymeleaf Exercise #</title>
     <link rel="stylesheet" th:href="@{/style.css}" />
@@ -14,7 +14,6 @@
         <th>Animal</th>
         <th>King</th>
         <th>State</th>
-        <th></th>
 
     </tr>
     <tr th:each= "account : ${list} ">
@@ -29,13 +28,12 @@
             <span th:if="${account.isAGuy()==false}" th:text="'Bad guy'" />
             <span th:unless="${account.isAGuy()==false}" th:text="'Good guy'"/>
         </td>
-        <td>
-            <button> raise </button>
-        </td>
-
-
 
     </tr>
+
+    <form class="button" th:action="@{/accounts/raise}" method="post">
+    <input type="submit" value="Submit"/>
+    </form>
 </table>
 
 
