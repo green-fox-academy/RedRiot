@@ -26,10 +26,10 @@ public class LicencePlateServiceImp implements LicencePlateService {
   @Override
   public List<LicencePlate> searchPlates(String plate, int police, int diplomat) {
     if (police == 1) {
-      return licenceRepository.findAllByPlateStartingWith("RB");
+      return licenceRepository.getPolice();
 
     } else if (diplomat == 1) {
-      return licenceRepository.findAllByPlateStartingWith("DT");
+      return licenceRepository.getPolice();
 
     }
     return licenceRepository.findAllByPlateContaining(plate);
